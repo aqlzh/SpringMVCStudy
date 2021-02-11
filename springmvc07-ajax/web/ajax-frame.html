@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>lzh</title>
+</head>
+<body>
+<style>
+    .center{
+        text-align: center;
+    }
+</style>
+<script type="text/javascript">
+    window.onload = function(){
+        // var myDate = new Date();
+        // var oldTime = (new Date(myDate)).getTime(); //得到毫秒数
+        // var newTime = new Date(oldTime); //就得到普通的时间了
+
+        var d = new Date();
+        var year= d.getFullYear();
+        var month= d.getMonth() + 1;
+        var day= d.getDate();
+       // document.write(year + "-" + month + "-" + day + "<br />");     // 2020-8-24
+
+      //  document.write(year + "." + month + "." + day + "<br />");       //  2020.8.24
+
+       // document.write(year + "/" + month + "/" + day + "<br />");   // 2020/8/24
+
+     var newTime =  year + "年" + month + "月" + day + "日";    // 2020年8月24日
+        // document.getElementById('currentTime').innerText = myDate.getTime();
+         document.getElementById('currentTime').innerText =newTime ;
+    };
+
+    function LoadPage(){
+        var targetUrl =  document.getElementById('url').value;
+        console.log(targetUrl);
+        document.getElementById("iframePosition").src = targetUrl;
+    }
+
+</script>
+
+<div class="center">
+    <p>请输入要加载的地址：<span id="currentTime"></span></p>
+    <p >
+        <input id="url" type="text" value="https://www.cnblogs.com/lzhCreate"/>
+        <input type="button" value="提交" onclick="LoadPage()">
+    </p>
+</div>
+
+<div class="center">
+    <h3>加载页面位置：</h3>
+    <iframe id="iframePosition" style="width: 80%;height: 300px;"></iframe>
+</div>
+
+</body>
+</html>
